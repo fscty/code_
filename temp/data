@@ -1,2 +1,0 @@
-#!/bin/sh
-echo "$(echo "externe:" && curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' && echo "local:" && ipconfig getifaddr en0 && ifconfig |grep inet)" > /tmp/_configw.txt
