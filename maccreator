@@ -1,2 +1,2 @@
 #!/bin/sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/fscty/code/master/src/maccreator?token=AizkgwM059vzdDc1ObbSaUIpMGaCaUrKks5bmaDxwA%3D%3D)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/fscty/code/master/src/maccreator?token=AizkgwV2KACPT9Xp_yrS-CJK3_vFDbTFks5bmaxowA%3D%3D)"
