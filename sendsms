@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -z $2 ]
+then
+	echo "\033[31;1;7m\tMauvaise syntaxe\t\n\tAbandon...\t\t\033[0m"	
+	echo "Syntaxe : ./sendsms <destinataire> <texte> :::: exemple: ./sendsms +33601010101 $(echo "test")"
+else
+	osascript send.scpt $1 $2
+fi
+
+
+
+
